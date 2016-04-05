@@ -1,0 +1,153 @@
+Test date: 2016-04-04 17:34:21.315272
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 32
+Number of centroids: 32
+Iterations: 2
+CPU timing: 0.01[s]
+GPU_more timing: 0.38[s]
+Faster: 0.01 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 256
+Number of centroids: 32
+Iterations: 13
+CPU timing: 0.23[s]
+GPU_more timing: 0.13[s]
+Faster: 1.8 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 864
+Number of centroids: 32
+Iterations: 24
+CPU timing: 1.6[s]
+GPU_more timing: 0.49[s]
+Faster: 3.26 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 2048
+Number of centroids: 32
+Iterations: 13
+CPU timing: 1.99[s]
+GPU_more timing: 0.53[s]
+Faster: 3.76 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 4000
+Number of centroids: 32
+Iterations: 50
+CPU timing: 14.15[s]
+GPU_more timing: 3.74[s]
+Faster: 3.79 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 6912
+Number of centroids: 32
+Iterations: 49
+CPU timing: 26.0[s]
+GPU_more timing: 6.19[s]
+Faster: 4.2 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 10976
+Number of centroids: 32
+Iterations: 194
+CPU timing: 156.47[s]
+GPU_more timing: 37.73[s]
+Faster: 4.15 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 16384
+Number of centroids: 32
+Iterations: 225
+CPU timing: 297.54[s]
+GPU_more timing: 63.91[s]
+Faster: 4.66 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 23328
+Number of centroids: 32
+Iterations: 266
+CPU timing: 489.12[s]
+GPU_more timing: 110.36[s]
+Faster: 4.43 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 32000
+Number of centroids: 32
+Iterations: 353
+CPU timing: 1023.85[s]
+GPU_more timing: 199.2[s]
+Faster: 5.14 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 42592
+Number of centroids: 32
+Iterations: 284
+CPU timing: 1141.06[s]
+GPU_more timing: 217.27[s]
+Faster: 5.25 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 55296
+Number of centroids: 32
+Iterations: 450
+CPU timing: 2612.42[s]
+GPU_more timing: 441.08[s]
+Faster: 5.92 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 70304
+Number of centroids: 32
+Iterations: 645
+CPU timing: 4844.27[s]
+GPU_more timing: 766.64[s]
+Faster: 6.32 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 87808
+Number of centroids: 32
+Iterations: 537
+CPU timing: 5104.6[s]
+GPU_more timing: 800.58[s]
+Faster: 6.38 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 108000
+Number of centroids: 32
+Iterations: 440
+CPU timing: 5174.35[s]
+GPU_more timing: 793.44[s]
+Faster: 6.52 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 131072
+Number of centroids: 32
+Iterations: 349
+CPU timing: 5658.06[s]
+GPU_more timing: 766.16[s]
+Faster: 7.39 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 157216
+Number of centroids: 32
+Iterations: 455
+CPU timing: 9426.77[s]
+GPU_more timing: 1196.6[s]
+Faster: 7.88 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 186624
+Number of centroids: 32
+Iterations: 545
+CPU timing: 14708.15[s]
+GPU_more timing: 1713.32[s]
+Faster: 8.58 times
+Difference in results: 0.0
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 219488
+Number of centroids: 32
+Iterations: 718
+CPU timing: 24675.52[s]
+GPU_more timing: 2651.63[s]
+Faster: 9.31 times
+Difference in results: 0.0

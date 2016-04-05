@@ -1,0 +1,6 @@
+Number of probes: 100000
+Number of centroids: 32
+GPU iteration:  468
+CPU timing:  5335.99 [s]
+GPU_more timing:  806.03 [s]
+Difference in results:  0.0
