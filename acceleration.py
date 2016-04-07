@@ -5,14 +5,14 @@ from copy import deepcopy
 
 t0 = time.clock()  # czas początkowy
 
-a = 2000
-b = 32
+a = int(input("Number of probes == "))
+b = int(input("Number of centroids == "))
 
 a -= a % 32  # przy braku podzielności przez 32 może zaistnieć błąd w wynikach
 b -= b % 32
 
-k = 7  # przesunięcie, poniżej którego nastąpi zakończenie działania algorytmu, dokładniej 1e-k
-# k = input("Shift = 1e- ??")
+# k = 7  # przesunięcie, poniżej którego nastąpi zakończenie działania algorytmu, dokładniej 1e-k
+k = input("Shift = 1e- ??")
 shift = 10**(-k)
 
 DATA = f.random_matrix(a, b)
@@ -62,6 +62,6 @@ print("Number of probes: ", a)
 print("Number of centroids: ", b)
 print("Iterations: ", q)
 print("CPU timing: ", round(t2, 2), "[s]")
-print("GPU_more timing: ", round(t4, 2), "[s]")
+print("GPU timing: ", round(t4, 2), "[s]")
 print("Faster: ", round(t2/t4, 2), "times")
 print("Difference in results: ", round(np.ndarray.sum(DATA2) - np.ndarray.sum(DATA), 2))

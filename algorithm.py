@@ -4,8 +4,8 @@ import functions as f
 
 t0 = time.clock()  # czas początkowy
 
-a = 64*64
-b = 32
+a = int(input("Number of probes == "))
+b = int(input("Number of centroids == "))
 
 a -= a % 32  # przy braku podzielności przez 32 może zaistnieć błąd w wynikach
 b -= b % 32
@@ -13,7 +13,7 @@ b -= b % 32
 # k = 5  # przesunięcie, poniżej którego nastąpi zakończenie działania algorytmu, dokładniej 1e-k
 k = int(input("Shift = 1e- ?? "))
 shift = 10**(-k)
-gpu_vs_cpu = "gpu"  # run gpu or cpu version of main algorithm
+gpu_vs_cpu = "cpu"  # run gpu or cpu version of main algorithm
 # gpu_vs_cpu = input("Use gpu or cpu version of algorithm")
 
 DATA = f.random_matrix(a, b)
