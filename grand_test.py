@@ -5,68 +5,59 @@ from copy import deepcopy
 import datetime
 
 now = datetime.datetime.now()
-name = "wyniki_przyspieszenia"+str(datetime.date.today())+".txt"
+name = "results_of_acceleration"+str(datetime.date.today())+".txt"
 file = open(name, "w")
 now = "Test date: " + str(now) + '\n'
 file.write(now)
 file.close()
 
+max_probes = int(input("State the max n (there will be 32*n*n*n probes in final calculation "))
+k = int(input("Shift = 1e- ?? "))
 
-for n in range(1, 5):
-    t0 = time.clock()  # czas początkowy
-    a = 32 * n * n * n
+for n in range(max_probes):
+    t0 = time.clock()  # start time
+    a = 32 * (n+1)**3  # to lower the number of calculations
     b = 32
 
-    k = 7  # przesunięcie, poniżej którego nastąpi zakończenie działania algorytmu, dokładniej 1e-k
-    # k = input("Shift = 1e- ??")
     shift = 10**(-k)
 
-    DATA = f.random_matrix(a, b)
-    DATA2 = DATA
+    DATA = f.random_matrix(a, b)  # a x b matrix, with generated random probes
+    DATA2 = DATA  # copy input DATA, so calculations may be later compared
 
     [CENTROIDS, CENTROIDS_SHIFT, PREVIOUS_CENTROIDS] = f.centroid_creation(DATA, b)
-
-    CENTROIDS2 = deepcopy(CENTROIDS)
-
+    CENTROIDS2 = deepcopy(CENTROIDS)  # copy starting CENTROIDS, so calculations may be later compared
     CENTROIDS_SHIFT2 = deepcopy(CENTROIDS_SHIFT)
-
     PREVIOUS_CENTROIDS2 = deepcopy(PREVIOUS_CENTROIDS)
     # f.stan(CENTROIDS, CENTROIDS_SHIFT, DATA, b)
 
-    t1 = time.clock()   # gpu start time
+    t1 = time.clock()   # cpu start time
 
-    # pętelka
-    q = 0  # liczba iteracji
-    t = 1  # może być też max z CENTROIDS_SHIFT ale to i tak jest 1
-    while t > shift:
+    q = 0  # iterator
+    while np.ndarray.max(CENTROIDS_SHIFT) > shift:  # check if actual max centroid shift meets conditions
         q += 1
         print(" ------------------- ")
         print("CPU iteration: ", q)
-        print("Max shift: ", round(t, 7))
-        # WERSJA CPU -------------------------------------------------------------
+        print("Max shift: ", round(np.ndarray.max(CENTROIDS_SHIFT), k))
+        # CPU -------------------------------------------------------------
         [DATA, CENTROIDS, CENTROIDS_SHIFT, PREVIOUS_CENTROIDS] = \
             f.algorithm_cpu(DATA, CENTROIDS, CENTROIDS_SHIFT, PREVIOUS_CENTROIDS, a, b)
-        t = np.ndarray.max(CENTROIDS_SHIFT)
 
-    t2 = time.clock() - t1  # gpu time
+    t2 = time.clock() - t1  # cpu time
     print("-----------------------------------------------------------------------------------------------------------")
-    t3 = time.clock()  # cpu start time
-    # pętelka
-    q = 0  # liczba iteracji
-    t = 1  # może być też max z CENTROIDS_SHIFT ale to i tak jest 1
-    while t > shift:
+    t3 = time.clock()  # gpu start time
+
+    q = 0  # iterator
+    while np.ndarray.max(CENTROIDS_SHIFT2) > shift:  # check if actual max centroid shift meets conditions
         q += 1
         print(" ------------------- ")
         print("GPU iteration: ", q)
-        print("Max shift: ", round(t, 7))
+        print("Max shift: ", round(np.ndarray.max(CENTROIDS_SHIFT), k))
         # WERSJA GPU_lepsza -------------------------------------------------------------
         [DATA2, CENTROIDS2, CENTROIDS_SHIFT2, PREVIOUS_CENTROIDS2] = \
             f.algorithm_gpu(DATA2, CENTROIDS2, CENTROIDS_SHIFT2, PREVIOUS_CENTROIDS2, a, b)
 
-        t = np.ndarray.max(CENTROIDS_SHIFT2)
+    t4 = time.clock() - t3  # gpu time
 
-    t4 = time.clock() - t3  # cpu time
-    print("-----------------------------------------------------------------------------------------------------------")
     print("Summary: ")
     print("Number of probes: ", a)
     print("Number of centroids: ", b)
@@ -75,8 +66,9 @@ for n in range(1, 5):
     print("GPU_more timing: ", round(t4, 2), "[s]")
     print("Faster: ", round(t2/t4, 2), "times")
     print("Difference in results: ", round(np.ndarray.sum(DATA2) - np.ndarray.sum(DATA), 2))
+
     file = open(name, "a")
-    file.writelines("------------------------------------------------------------------------------ -----------" + '\n')
+    file.writelines("------------------------------------------------------------------------------------------" + '\n')
     file.writelines("Summary: ")
     string = "Number of probes: " + str(a) + '\n'
     file.writelines(string)
