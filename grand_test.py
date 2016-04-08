@@ -11,9 +11,8 @@ now = "Test date: " + str(now) + '\n'
 file.write(now)
 file.close()
 
-z = int(input("Calculate until number of 32*probes^^3 == "))
 
-for n in range(1, z):
+for n in range(1, 5):
     t0 = time.clock()  # czas początkowy
     a = 32 * n * n * n
     b = 32
