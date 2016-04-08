@@ -1,0 +1,18 @@
+Test date: 2016-04-08 12:52:55.101542
+------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 32
+Number of centroids: 32
+Iterations: 2
+CPU timing: 0.01[s]
+GPU_more timing: 0.39[s]
+Faster: 0.01 times
+Difference in results: 0.0
+User set shift = 1e-09------------------------------------------------------------------------------ -----------
+Summary: Number of probes: 256
+Number of centroids: 32
+Iterations: 9
+CPU timing: 0.18[s]
+GPU_more timing: 0.1[s]
+Faster: 1.91 times
+Difference in results: 0.0
+User set shift = 1e-09
